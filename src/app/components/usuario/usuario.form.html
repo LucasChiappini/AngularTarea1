@@ -1,0 +1,20 @@
+<p>USUARIO FORM COMPONENT</p>
+
+<form novalidate (submit)="this.submitForm($event)">
+    <!--ONE WAY BINDING-->
+    <label for="nombre"></label>
+    <input id="nombre" type="text" [formField]="this.usuarioForm.nombre" /> <!--NO USAR-->
+    <br />
+
+    <!--Usamos este solo para cosas basicas, pero no lo vamos a usar para forms-->
+    <label for=" apellido"></label>
+    <input id="apellido" type="text" [formField]="this.usuarioForm.apellido" />
+
+    <label for="email"></label>
+    <input type="email">
+    <br>
+
+    <input type="submit" value="Guardar">
+
+</form>
+<p>{{this.usuarioForm().value() | json}}</p>

@@ -1,0 +1,30 @@
+#app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /*El alto minimo del 100 de la pantalla*/
+}
+
+#app-header {
+    background-color: black;
+    color: white;
+}
+
+#app-medio {
+    display: flex;
+    flex: 1;
+}
+
+#app-footer {
+    background-color: cyan;
+}
+
+#app-sidebar {
+    width: 240px; /* generalmente no usamos medidas absolutas, sino relativas pero aca es la excepcion.*/
+    background-color: gainsboro;
+}
+
+#app-page {
+    flex: 1;
+    overflow-y: auto;
+}

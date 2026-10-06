@@ -1,0 +1,35 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha Creada</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (tarea of tareas; track tarea.id_tarea) {
+        <tr>
+            <td>{{ tarea.id_tarea }}</td>
+            <td>{{ tarea.nombre }}</td>
+            <td>{{ tarea.descripcion }}</td>
+            <td>{{ tarea.fecha_creada | date:'shortDate' }}</td>
+            <td>
+                <button (click)="goToEditar(tarea.id_tarea)">Editar</button>
+                <button (click)="finalizar(tarea)">Finalizar</button>
+                <button (click)="eliminar(tarea)">Eliminar</button>
+            </td>
+        </tr>
+        } @empty {
+        <tr>
+            <td colspan="5">No se encontraron tareas registradas.</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<div style="margin-top: 20px;">
+    <button (click)="goToCrear()">Crear</button>
+    <button (click)="irAHome()">Volver al Home</button>
+</div>
